@@ -1,0 +1,42 @@
+<div class="row galleryContainer">
+  <div class="col-md-6 text-section">
+    <h1 class="">
+      <span>
+        Check
+      </span> our latest Media Gallery
+    </h1>
+    <p>Every picture holds a moment, every moment holds a story</p>
+
+    <button class="btn btn-primary">View all photos</button>
+  </div>
+
+  <div class="col-md-6">
+      <div class="slider-container">
+    <div class="slider">
+      <div class="slide prev">
+        <img [src]="getImage(-1)" />
+      </div>
+  
+      <div class="slide current">
+        <img [src]="getImage(0)" />
+      </div>
+  
+      <div class="slide next">
+        <img [src]="getImage(1)" />
+      </div>
+    </div>
+  
+  </div>
+  
+  <div class="slider-controls-container">
+    <div class="controls text-section">
+      <button (click)="prevSlide()" class="slider-btn">&lt;</button>
+      <button (click)="nextSlide()" class="slider-btn">&gt;</button>
+    </div>
+    
+    <p-slider [(ngModel)]="currentIndex" [min]="0" [max]="sliderData.length - 1" [step]="1"></p-slider>
+    <span class="slide-counter">{{currentIndex + 1}}/{{sliderData.length}}</span>
+  </div>
+  </div>
+
+</div>

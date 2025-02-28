@@ -1,0 +1,74 @@
+ ::ng-deep .text-section {
+     span {
+         color: var(--dynamic-color) !important;
+     }
+
+     button {
+         background-color: var(--dynamic-color) !important;
+     }
+     p{
+        color: #696984;
+     }
+ }
+
+
+ .banner-slide {
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     padding: 50px 0;
+
+     .container {
+         max-width: 1200px;
+     }
+
+     .row {
+         display: flex;
+         align-items: center;
+         justify-content: space-between;
+     }
+
+     .text-section {
+         flex: 1;
+         padding-right: 40px;
+
+
+     }
+
+     .image-section {
+         flex: 1;
+         display: flex;
+         justify-content: center;
+
+         .image-container {
+             display: flex;
+             justify-content: center;
+             align-items: center;
+             position: relative;
+             height: 250px;
+             width: 100%;
+
+         }
+
+         .image-wrapper {
+
+             border-radius: 50%;
+             justify-content: center;
+             align-items: center;
+             overflow: hidden;
+             padding: 20px;
+             width: 300px;
+             height: 300px;
+         }
+
+         .student-image {
+             width: 100%;
+             height: auto;
+             object-fit: cover;
+             margin-top: 1.3rem;
+             max-width: 100%;
+             height: auto;
+         }
+     }
+
+ }

@@ -1,0 +1,26 @@
+<p-carousel  [value]="banners" [numVisible]="1" [numScroll]="1" [circular]="true"  [showIndicators]="false"  
+    [showNavigators]="true">
+    <ng-template pTemplate="item" let-banner>
+        <div class="banner-slide" (mouseover)="setDynamicColor(banner.colorCode)">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-6 text-section">
+                        <div class="text-section" [ngStyle]="{'--dynamic-color': '#' + banner.colorCode}">
+                            <div [innerHTML]="banner.title"></div>
+                        </div>
+                        <p>{{ banner.brief }}</p>
+                        <button pButton label="Get started" class="btn btn-primary" [ngStyle]="{'--dynamic-color': '#' + banner.colorCode}">Get started</button>
+                    </div>
+                    <div class="col-md-6 image-section">
+                        <div class="image-container">
+                            <div class="image-wrapper" [style.background-color]="'#' + banner.colorCode">
+                                <img [src]="banner.image" alt="Student" class="student-image" />
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </ng-template>
+</p-carousel>
