@@ -12,13 +12,15 @@ export class CoursesComponent {
   categories: any = [];
   activeCategory: string = 'All'
   filteredCourses: CourseModel[] = [];
-  constructor(private landingService: LandingService) { }
+  constructor(private landingService: LandingService
+  ) { }
 
   ngOnInit(): void {
     this.landingService.getCoursesData().subscribe(
       data => {
         this.courses = data.Courses;
         this.filteredCourses = [...this.courses];
+        localStorage.setItem('courses', JSON.stringify(this.courses));
         const uniqueCategories = new Set(this.courses.map(course => course.category));
         this.categories.push(...uniqueCategories);
 
@@ -28,8 +30,7 @@ export class CoursesComponent {
   setActiveCategory(category: string) {
     this.activeCategory = category;
 
-   this.filteredCourses =  category == 'All' ? [...this.courses] : this.courses.filter(course => course.category == category);
-    console.log(this.filteredCourses)
+    this.filteredCourses = category == 'All' ? [...this.courses] : this.courses.filter(course => course.category == category);
   }
 
 

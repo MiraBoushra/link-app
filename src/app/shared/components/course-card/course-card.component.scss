@@ -40,6 +40,10 @@
 
   .content {
 
+    .course-title{
+      cursor: pointer;
+    }
+
     .price {
       display: flex;
       justify-content: space-between;

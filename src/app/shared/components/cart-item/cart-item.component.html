@@ -5,7 +5,9 @@
         <span class="discount-badge" *ngIf="course.discount">- ${{ course.discount }}</span>
       </div>
       <div class="details">
-        <h4>{{ course.title }}</h4>
+        <h4 (click)="navigateToCourse(course)" class="course-title">
+          {{ course.title }}
+        </h4>
         <p class="author">By {{ course.author }}</p>
         <p class="course-info">
           {{ course.hours }} Total Hours. {{ course.lectures }} Lectures. {{ course.level }}

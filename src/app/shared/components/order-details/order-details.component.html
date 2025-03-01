@@ -1,0 +1,22 @@
+<div class="card p-3 shadow-sm mb-5">
+    <h5 class="card-title text-primary">Order Details</h5>
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item d-flex justify-content-between">
+            <span>Price</span>
+            <strong>{{cartService.subtotal()}}$</strong>
+        </li>
+        <li class="list-group-item d-flex justify-content-between">
+            <span>Discount</span>
+            <strong class="text-danger">-{{cartService.totalDiscount()}}$</strong>
+        </li>
+        <li class="list-group-item d-flex justify-content-between">
+            <span>Tax</span>
+            <strong>{{cartService.tax()}}$</strong>
+        </li>
+        <li class="list-group-item d-flex justify-content-between font-weight-bold">
+            <span>Total</span>
+            <strong>{{cartService.totalPrice()}}$</strong>
+        </li>
+    </ul>
+    <button (click)="goToCheckout()" class="btn btn-primary btn-block mt-3">Proceed to Checkout</button>
+</div>

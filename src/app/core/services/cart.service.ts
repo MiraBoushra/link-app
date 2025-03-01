@@ -7,12 +7,10 @@ import { CourseModel } from 'src/app/features/models/landingModels';
 export class CartService {
   private readonly CART_KEY = 'cartItems';
 
-  // Signal to store cart items
   private cartItems = signal<CourseModel[]>(this.loadCartFromStorage());
 
   constructor() {}
 
-  // Load cart items from local storage
   private loadCartFromStorage(): CourseModel[] {
     try {
       return JSON.parse(localStorage.getItem(this.CART_KEY) || '[]');
@@ -22,38 +20,45 @@ export class CartService {
     }
   }
 
-  // Save cart items to local storage
   private saveCartToStorage(cartItems: CourseModel[]) {
     localStorage.setItem(this.CART_KEY, JSON.stringify(cartItems));
   }
 
-  // Computed property for cart count
   cartCount = computed(() => this.cartItems().length);
 
-  // Computed property to get cart items
   cartCoursesInfo = computed(() => this.cartItems());
 
-  // Add item to cart (immutable update)
+  subtotal = computed(() => 
+    this.cartItems().reduce((sum, course) => sum + (course.price ?? 0), 0)
+  );  
+
+  totalDiscount = computed(() =>
+    this.cartItems().reduce((sum, course) => sum + (course.discount || 0), 0)
+  );
+
+  tax = computed(() => this.subtotal() * 0.10);
+
+  totalPrice = computed(() => this.subtotal() - this.totalDiscount() + this.tax());
+
   addToCart(course: CourseModel) {
     this.cartItems.update(items => {
+      const isAlreadyInCart = items.some(item => item.id === course.id);
+      
+      if (isAlreadyInCart) {
+        return items; 
+      }
+  
       const updatedCart = [...items, course];
       this.saveCartToStorage(updatedCart);
       return updatedCart;
     });
   }
 
-  // Remove item from cart
-  removeFromCart(courseId: string |undefined) {
+  removeFromCart(courseId: string | undefined) {
     this.cartItems.update(items => {
       const updatedCart = items.filter(course => course.id !== courseId);
       this.saveCartToStorage(updatedCart);
       return updatedCart;
     });
-  }
-
-  // Clear entire cart
-  clearCart() {
-    this.cartItems.set([]);
-    localStorage.removeItem(this.CART_KEY);
   }
 }

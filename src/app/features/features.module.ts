@@ -13,6 +13,7 @@ import { TabMenuModule } from 'primeng/tabmenu';
 import { CardModule } from 'primeng/card';
 import { DataViewModule } from 'primeng/dataview';
 import { SharedModule } from '../shared/shared.module';
+import { RouterModule } from '@angular/router';
 
 let components = [BannerComponent, GalleryComponent, CoursesComponent];
 @NgModule({
@@ -27,9 +28,11 @@ let components = [BannerComponent, GalleryComponent, CoursesComponent];
     TabMenuModule,
     CardModule,
     DataViewModule, 
-    SharedModule
+    SharedModule,
 
-
+    RouterModule.forChild([
+      { path: 'course-details', loadChildren: () => import('./courses/courses.module').then(m => m.CourseModule) }
+    ])
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   exports: components

@@ -19,7 +19,10 @@
           <span>${{ course.price }}</span>
           <p-chip class="category">{{ course.category }}</p-chip>
         </div>
-        <h3>{{ course.title }}</h3>
+        <h3 (click)="navigateToCourse(course)" class="course-title">
+          {{ course.title }}
+        </h3>
+        
         <p class="author">By {{ course.author }}</p>
   
         <div class="rating">

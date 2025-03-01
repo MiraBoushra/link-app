@@ -1,0 +1,25 @@
+.card {
+    border-radius: 10px;
+    .pi {
+      cursor: pointer;
+      &:hover {
+        color: #007bff;
+      }
+    }
+  }
+  
+  .text-warning {
+    font-size: 18px;
+  }
+
+  .details{
+    &__data{
+        background-color: #F8FAFC;
+        margin: auto;
+    }
+
+    &__price{
+        margin-bottom: 2.3rem;
+    }
+  }
+  

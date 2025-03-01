@@ -5,10 +5,12 @@ import { CardModule } from 'primeng/card';
 import { ChipModule } from 'primeng/chip';
 import { CartItemComponent } from './components/cart-item/cart-item.component';
 import { RatingModule } from 'primeng/rating';
+import { OrderDetailsComponent } from './components/order-details/order-details.component';
 @NgModule({
   declarations: [
     CourseCardComponent,
-    CartItemComponent
+    CartItemComponent,
+    OrderDetailsComponent
   ],
   imports: [
     CommonModule,
@@ -17,6 +19,6 @@ import { RatingModule } from 'primeng/rating';
     RatingModule
     
   ],
-  exports:[CourseCardComponent, CartItemComponent]
+  exports:[CourseCardComponent, CartItemComponent, OrderDetailsComponent]
 })
 export class SharedModule { }
