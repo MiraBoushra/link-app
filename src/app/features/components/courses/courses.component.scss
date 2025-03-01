@@ -1,0 +1,46 @@
+.courses-container {
+  display: flex;
+  max-width: 100%;
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.courses-filter {
+  text-align: center;
+  margin-bottom: 20px;
+
+  h2 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+
+  .filter-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+
+    button {
+      background: gray;
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 14px;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      opacity: 0.8;
+    }
+
+    .active {
+      background: #00aaff; // Blue color for active state
+      color: white;
+    }
+  }
+
+}

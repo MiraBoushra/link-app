@@ -1,0 +1,33 @@
+<p-card class="course-card">
+    <ng-template pTemplate="header">
+      <div class="header ">
+        <div class="image-container">
+            <img [src]="course.image" alt="{{ course.title }}" class="course-image " />
+
+        </div>
+        <span class="discount" *ngIf="course.discount">-${{ course.discount }}</span>
+        
+        <button *ngIf="course.addToCart" class="cart-icon-button" (click)="addToCart()">
+            <img src="assets/images/whiteCart.png" alt="Add to Cart" class="cart-icon-img" />
+        </button>
+            </div>
+    </ng-template>
+  
+    <ng-template pTemplate="content">
+      <div class="content">
+        <div class="price">
+          <span>${{ course.price }}</span>
+          <p-chip class="category">{{ course.category }}</p-chip>
+        </div>
+        <h3>{{ course.title }}</h3>
+        <p class="author">By {{ course.author }}</p>
+  
+        <div class="rating">
+          <i *ngFor="let star of stars" class="pi pi-star filled"></i>
+          <span>({{ course.ratingCount }} Ratings)</span>
+        </div>
+  
+        <p class="details">{{ course.hours }} Total Hours. {{ course.lectures }} Lectures. {{ course.level }}</p>
+      </div>
+    </ng-template>
+  </p-card>

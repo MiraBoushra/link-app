@@ -4,4 +4,19 @@
     padding: .8rem 1.5rem;
     align-items: center;
     border-bottom: 1px solid #ddd;
+
+    &__logo{
+        cursor: pointer;;
+    }
+
+    &__cart-container{
+        cursor: pointer;
+    }
+
+    &__actionBtns{
+        display: flex;
+        gap: .5rem;
+        align-items: center;
+    }
+
 }

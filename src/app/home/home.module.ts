@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { TranslateModule } from '@ngx-translate/core';
 import { HomeComponent } from './components/home/home.component';
 import { FeaturesModule } from '../features/features.module';
+import { HomeRoutingModule } from './home-routing.module';
 
 
 @NgModule({
@@ -13,8 +14,8 @@ import { FeaturesModule } from '../features/features.module';
     imports: [
         CommonModule,
         TranslateModule,
-        FeaturesModule
-
+        FeaturesModule,
+        HomeRoutingModule, 
     ],
     exports: [TranslateModule, HomeComponent]
 })

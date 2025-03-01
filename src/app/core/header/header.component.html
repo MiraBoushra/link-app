@@ -1,9 +1,14 @@
 <header class="header">
-    <div>
-        <img src="assets/images/logo.png" alt="Logo" />
+    <div class="header__logo">
+        <img src="assets/images/logo.png" alt="Logo" (click)="onLogoClick()" />
     </div>
     <div class="header__actionBtns">
-        <img src="assets/images/cartIcon.png" alt="cartIcon" />
+        <span class="header__cart-container" (click)="goToCart()">
+            <img src="assets/images/cartIcon.png" alt="cartIcon" />
+            <span *ngIf="cartService.cartCount() > 0 " class="cart-badge">
+              {{cartService.cartCount() }}
+            </span>
+        </span>
         <button class="btn btn-outline-primary">{{'LogIn'|translate}}</button>
         <button class="btn btn-primary">{{'LogOut'|translate}}</button>
     </div>

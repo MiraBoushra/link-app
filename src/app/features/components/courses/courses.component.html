@@ -1,0 +1,13 @@
+<div class="courses-filter">
+  <h2>Top Courses</h2>
+  <div class="filter-buttons">
+    <button [class.active]="activeCategory === 'All'"  (click)="setActiveCategory('All')">All</button>
+    <button [class.active]="activeCategory === category" (click)="setActiveCategory(category)" *ngFor = "let category of categories">
+      {{category}}
+    </button>
+  </div>
+</div>
+
+<div class="courses-container">
+    <app-course-card  *ngFor="let course of filteredCourses" [course]="course"></app-course-card>
+</div>

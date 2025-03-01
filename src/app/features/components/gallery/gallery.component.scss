@@ -1,6 +1,7 @@
 .galleryContainer {
   background-color: #E4F8FF;
   padding: 6rem;
+  display: flex;
 }
 
 .slider-container {
@@ -25,14 +26,12 @@
   height: 250px;
   transition: transform 0.5s ease-in-out;
   opacity: 0.7;
-  // position: absolute;
 }
 
 .current {
   width: 40rem;
   height: 300px;
   opacity: 1;
-  // position: absolute;
 }
 
 img {
@@ -79,7 +78,6 @@ button {
 }
 
 .slider-btn {
-  // background-color: #00aaff;
   color: white;
   border: none;
   border-radius: 15px;

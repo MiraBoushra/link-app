@@ -16,10 +16,7 @@ export class BannerComponent implements OnInit {
     this.bannerService.getBannerData().subscribe(
       data => {
         this.banners = data.banners.sort((a, b) => a.order - b.order);
-      }
-      
-    );
-
+      });
   }
 
   setDynamicColor(color: string) {
