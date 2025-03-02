@@ -6,7 +6,7 @@
         <span class="header__cart-container" (click)="goToCart()">
             <img src="assets/images/cartIcon.png" alt="cartIcon" />
             <span *ngIf="cartService.cartCount() > 0 " class="cart-badge">
-              {{cartService.cartCount() }}
+                {{cartService.cartCount() }}
             </span>
         </span>
         <button class="btn btn-outline-primary">{{'LogIn'|translate}}</button>

@@ -14,13 +14,16 @@
   h2 {
     font-size: 20px;
     font-weight: bold;
-    margin-bottom: 10px;
+    margin: 10px;
   }
 
   .filter-buttons {
     display: flex;
     justify-content: center;
     gap: 10px;
+    @media (max-width: 768px) {
+      display: none;
+    }
 
     button {
       background: gray;
@@ -38,7 +41,7 @@
     }
 
     .active {
-      background: #00aaff; // Blue color for active state
+      background: #00aaff;
       color: white;
     }
   }

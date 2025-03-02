@@ -5,15 +5,44 @@
     align-items: center;
     border-bottom: 1px solid #ddd;
 
-    &__logo{
-        cursor: pointer;;
+    &__logo {
+        cursor: pointer;
+        ;
     }
 
-    &__cart-container{
+    &__cart-container {
         cursor: pointer;
     }
 
-    &__actionBtns{
+    .cart-icon {
+        width: 50px;
+        /* Adjust size as needed */
+    }
+
+    .header__cart-container {
+        position: relative;
+        display: inline-block;
+        margin-right: 24px;
+    }
+
+    .cart-badge {
+        position: absolute;
+        top: -8px;
+        right: -14px;
+        background-color: orange;
+        color: white;
+        font-size: 12px;
+        font-weight: bold;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    }
+
+    &__actionBtns {
         display: flex;
         gap: .5rem;
         align-items: center;

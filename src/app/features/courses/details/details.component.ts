@@ -17,7 +17,7 @@ export class DetailsComponent {
     this.route.paramMap.subscribe(params => {
       let courseId = params.get('id');
       const courses = localStorage.getItem('courses');
-      const coursesArray: CourseModel[] = courses ? JSON.parse(courses) as CourseModel[] : []; // Ensure correct type
+      const coursesArray: CourseModel[] = courses ? JSON.parse(courses) as CourseModel[] : [];
       const selectedCourse = coursesArray.find(course => course.id == courseId);
       if (selectedCourse)
         this.course = selectedCourse

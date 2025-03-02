@@ -23,7 +23,7 @@ export class GalleryComponent {
 
   }
 
-  currentIndex = 1;
+  currentIndex = 0;
 
   nextSlide() {
     this.currentIndex = (this.currentIndex + 1) % this.sliderData.length;

@@ -1,7 +1,11 @@
 .galleryContainer {
   background-color: #E4F8FF;
   padding: 6rem;
-  display: flex;
+  @media (max-width: 768px) {
+    padding: unset;
+    padding: 2rem;
+    max-width: 104%;
+  }
 }
 
 .slider-container {
@@ -10,7 +14,11 @@
   align-items: center;
   width: 600px;
   margin: auto;
-
+  @media (max-width: 768px) {
+   display: inline;
+   width: unset;
+   margin-top: 2rem;
+  }
 }
 
 .slider {
@@ -41,9 +49,7 @@ img {
   border-radius: 10px;
 }
 
-.controls {
-  margin-top: 10px;
-}
+
 
 button {
   margin: 0 10px;
@@ -74,14 +80,14 @@ button {
 
 .controls {
   display: flex;
-  gap: 5px;
+  margin-bottom: 0 !important;
 }
 
 .slider-btn {
   color: white;
   border: none;
   border-radius: 15px;
-  padding: 5px 10px;
+  padding: 5px 20px;
   cursor: pointer;
 }
 
@@ -95,3 +101,8 @@ p-slider {
   color: black;
 }
 
+.text-section{
+  @media (max-width: 768px) {
+    margin-bottom: 2rem;
+  }
+}

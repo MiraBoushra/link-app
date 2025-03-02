@@ -1,4 +1,4 @@
-<p-carousel  [value]="banners" [numVisible]="1" [numScroll]="1" [circular]="true"  [showIndicators]="false"  
+<p-carousel  [value]="banners" [numVisible]="1" [numScroll]="1" [circular]="true"  [showIndicators]="false"  [autoplayInterval]="5000"
     [showNavigators]="true">
     <ng-template pTemplate="item" let-banner>
         <div class="banner-slide" (mouseover)="setDynamicColor(banner.colorCode)">
@@ -9,7 +9,7 @@
                             <div [innerHTML]="banner.title"></div>
                         </div>
                         <p>{{ banner.brief }}</p>
-                        <button pButton label="Get started" class="btn btn-primary" [ngStyle]="{'--dynamic-color': '#' + banner.colorCode}">Get started</button>
+                        <button pButton  class="btn btn-primary startedBtn" [ngStyle]="{'--dynamic-color': '#' + banner.colorCode}">Get started</button>
                     </div>
                     <div class="col-md-6 image-section">
                         <div class="image-container">

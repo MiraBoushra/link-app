@@ -6,11 +6,15 @@
      button {
          background-color: var(--dynamic-color) !important;
      }
-     p{
-        color: #696984;
+
+     p {
+         color: #696984;
+     }
+
+     h1 {
+         font-weight: bold;
      }
  }
-
 
  .banner-slide {
      display: flex;
@@ -31,7 +35,6 @@
      .text-section {
          flex: 1;
          padding-right: 40px;
-
 
      }
 
@@ -70,5 +73,21 @@
              height: auto;
          }
      }
+
+ }
+
+ .startedBtn {
+     @media (max-width: 768px) {
+         margin-bottom: 2rem;
+     }
+
+     .p-carousel-container {
+        button{
+         @media (max-width: 768px) {
+             display: none;
+         }
+        }
+     }
+
 
  }
